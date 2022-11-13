@@ -4,16 +4,12 @@
     <meta>
     <meta>
     <link rel="stylesheet" href="">
-    <title>Quotes</title>
+    <title>Results</title>
   </head>
 
   <body>
     <div>
-      <h1>All Quotes</h1>
-      <br>
-      <form action="{% url 'searchresults' %}" method="get">
-        <input type="search" name="q" placeholder="Search by name or quote..." class="form-control"></input>
-      </form>
+      <h1>All Results</h1>
       <br>
 
       {% for quote in quotes %}
@@ -21,7 +17,7 @@
         <li>{{ quote.quote }} - By {{ quote.name }}</li>
       </ul>
       {% empty %}
-      <p>The database is empty. Please add some quotes.</p>
+      <p>No results, here. Please try searching again.</p>
       {% endfor %}
       <br>
       
