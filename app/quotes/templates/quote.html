@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta>
+    <meta>
+    <meta>
+    <link rel="stylesheet" href="">
+    <title>Quotes</title>
+  </head>
+
+  <body>
+    <div>
+      <h1>All Quotes</h1>
+      <br>
+      <form action="{ url '' }">
+        <input type="search" name="q" placeholder="Search by name or quote..." class="form-control"></input>
+      </form>
+      <br>
+
+      {% for quote in quotes %}
+      <ul>
+        <li>{{ quote.quote }} - By {{ quote.name }}</li>
+      </ul>
+      {% empty %}
+      <p>The database is empty. Please add some quotes.</p>
+      {% endfor %}
+      <br>
+      
+    </div>
+  </body>
+</html>
